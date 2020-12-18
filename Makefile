@@ -6,8 +6,8 @@ else
 	SETENV_DARWIN := $(shell set GOOS=darwin)
 endif
 
-out/spacemath.exe: cmd/spacemath.go
+out/spacemath.exe: cmd/main.go
 	$(SETENV_WIN) go build -v -o $@ $^
 
-out/spacemath: cmd/spacemath.go
+out/spacemath: cmd/main.go
 	$(SETENV_DARWIN) go build -v -o $@ $^
