@@ -36,11 +36,7 @@ func stringToUintptr(value string) uintptr {
 	}
 
 	ptr, err := syscall.UTF16PtrFromString(value)
-	if err != nil {
-		return 0
-	}
-
-	if ptr == nil {
+	if err != nil || ptr == nil {
 		return 0
 	}
 
